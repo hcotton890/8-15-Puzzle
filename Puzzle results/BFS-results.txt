@@ -1,0 +1,156 @@
+Breadth-First Search:
+
+Start: 160273485
+Goal: 123456780
+Nodes Expanded: 22882
+ddluurdlldrruuldrd
+
+Start: 462301587
+Goal: 123456780
+Nodes Expanded:35472
+rdlurulldrdluruldrrulddr
+
+Start: 821574360
+Goal: 123456780
+Nodes Expanded:16371
+lulurdldruruldlurdruldlurdrd
+
+Start: 840156372
+Goal: 123456780
+Nodes Expanded:105492
+dllurdldrrullurddruulddr
+
+Start: 530478126
+Goal: 123456780
+Nodes Expanded:136692
+dldlurdruulldrdrululddrr
+
+Start:068314257
+Goal: 123456780
+Nodes Expanded:65621
+drrulldrdlurdruuldldrr
+
+Start:453207186
+Goal: 123456780
+Nodes Expanded:95342
+rdluulddruuldrdr
+
+Start:128307645
+Goal: 123456780
+Nodes Expanded:29643
+lurdrulldrdlurrdlurd
+
+Start:035684712
+Goal: 123456780
+Nodes Expanded:449735
+rdldrurdluldruulddruruldrd
+
+Start:684317025
+Goal: 123456780
+Nodes Expanded:146838
+rurulldrdlurrulldrdruulddr
+
+Start:028514637
+Goal: 123456780
+Nodes Expanded:214785
+drrdlurulldrdlurrdluurdd
+
+Start:618273540
+Goal: 123456780
+Nodes Expanded:105941
+luuldrrulddruulldrdlurdr
+
+Start:042385671
+Goal: 123456780
+Nodes Expanded:231404
+rrdlldrrullurrdldlurulddrr
+
+Start:420385716
+Goal: 123456780
+Nodes Expanded:510366
+dllurddlurrullddrurd
+
+Start:054672813
+Goal: 123456780
+Nodes Expanded:
+drdlururddluuldrurdldr
+
+Start:314572680
+Goal: 123456780
+Nodes Expanded:112438
+luldruuldrurdluldrurdldr
+
+Start:637218045
+Goal: 123456780
+Nodes Expanded:64281
+rruulldrrdluulddrruldr
+
+Start:430621875
+Goal: 123456780
+Nodes Expanded:29785
+ldldruruldlurrddlurd
+
+Start:158274036
+Goal: 123456780
+Nodes Expanded:843744
+urdruulddruldlurdruuldrd
+
+Start:130458726
+Goal: 123456780
+Nodes Expanded:3045
+dldruuldrdlurd
+
+Easy:
+
+Start:16235A749C08DEBF
+Goal: 123456789ABCDEF0
+Nodes Expanded:4908
+luurrddldr
+
+Start:0634217859ABDEFC
+Goal: 123456789ABCDEF0
+Nodes Expanded:2310
+drulddrrrd
+
+Start:012456379BC8DAEF
+Goal: 123456789ABCDEF0
+Nodes Expanded:3866
+rrdrdlldrr
+
+Start:51246A38097BDEFC
+Goal: 123456789ABCDEF0
+Nodes Expanded:3943
+rulurrddrd
+
+Start:12345678D9CFEBA0
+Goal: 123456789ABCDEF0
+Nodes Expanded:2625
+uldllurrdr
+
+Hard:
+
+Start:71A92CE03DB4658F
+Goal: 123456789ABCDEF0
+Nodes Expanded:130719
+lllurdddrruulldlurdrruldldlurulddrulurdruldrdluldrruldlururdlurruldlurrdlulddruldlurdrulldrurdlldrulurddluurdldruuldrrdluldrrulldrurruuldrdluurdddluruuldddruulurdddlllurdrulldrruldlurruurdldruuldddruluurddluruldddllurdrulldrrruldllurrrdlluldrrr
+
+Start:02348697DF5A1EBC
+Goal: 123456789ABCDEF0
+Nodes Expanded:64057
+ddrrurddlulldrurdllurrulldrurdlurrdluldrdruulddrulurddluuurdldruuldrdluulldrurdllurrrdluldrurdllurdrullldddruluurdddluuruldddrrruldllurrrdlluldrrr
+
+Start:39A1D0EC7BF86452
+Goal: 123456789ABCDEF0
+Nodes Expanded:21659
+rdlurrddlluuuldrdlurrulddrullurddlurdrdllurdrullurdlurrdluldrurdllurdrullurrrdluldrrulldlurrdlurrdldrulddrulurddluurulldrurdllurdrullddlurulddrulurrdldruuldddruluurddlurulldrdluurdldrdluruuldddruulurdddluurdldruurdluldrruldlurrddlurulddrulurddruldlurrdllluurdlurdldrrulurddluurdldrruldlurrdluldruulddrulurddr
+
+Start:EAB480FC19D56237
+Goal: 123456789ABCDEF0
+Nodes Expanded:14357
+ldrrrululldrdrulddluurdldruruuldrdldrulurddruuldrdluulddrulurddluuldrdluurrdlurulddrulurdlddruulddruuldrdluurdldruurddlurulddr
+
+Start:7DB13C52F46E80A9
+Goal: 123456789ABCDEF0
+Nodes Expanded:106570
+ruldruuurddluurdllurrdlllddrrruulllurrdlulddrulddrulurdlurrruldllurrrdlluldrrrddlurulddruuldrdluullurdrulldrrurdlllurrdllurrdlurrdllurdlurdrullldrulddrulurddluruldddruuldrdluururrdluldrrddlurulddrulurddlllurdrulldrruldlurrdruuulddruldrulurdddlllurdrrullldrrurdlllurrdluldrruruuldrdluurdddluruuldddruulurddd
+

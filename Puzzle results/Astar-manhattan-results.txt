@@ -1,0 +1,159 @@
+A-star manhattan:
+
+Start: 160273485
+Goal: 123456780
+Nodes Expanded:
+
+
+Start: 462301587
+Goal: 123456780
+Nodes Expanded:
+
+
+Start: 821574360
+Goal: 123456780
+Nodes Expanded:
+
+
+Start: 840156372
+Goal: 123456780
+Nodes Expanded:
+
+
+Start: 530478126
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:068314257
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:453207186
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:128307645
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:035684712
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:684317025
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:028514637
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:618273540
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:042385671
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:420385716
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:054672813
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:314572680
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:637218045
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:430621875
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:158274036
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:130458726
+Goal: 123456780
+Nodes Expanded:
+
+
+Start:
+Goal: 123456780
+Nodes Expanded:
+
+
+Easy:
+
+Start:16235A749C08DEBF
+Goal: 123456789ABCDEF0
+Nodes Expanded:
+
+
+Start:0634217859ABDEFC
+Goal: 123456789ABCDEF0
+Nodes Expanded:
+
+
+Start:012456379BC8DAEF
+Goal: 123456789ABCDEF0
+Nodes Expanded:
+
+
+Start:51246A38097BDEFC
+Goal: 123456789ABCDEF0
+Nodes Expanded:
+
+
+Start:12345678D9CFEBA0
+Goal: 123456789ABCDEF0
+Nodes Expanded:
+
+
+Hard:
+
+Start:71A92CE03DB4658F
+Goal: 123456789ABCDEF0
+Nodes Expanded:
+
+
+Start:02348697DF5A1EBC
+Goal: 123456789ABCDEF0
+Nodes Expanded:
+
+
+Start:39A1D0EC7BF86452
+Goal: 123456789ABCDEF0
+Nodes Expanded:
+
+
+Start:EAB480FC19D56237
+Goal: 123456789ABCDEF0
+Nodes Expanded:
+
+
+Start:7DB13C52F46E80A9
+Goal: 123456789ABCDEF0
+Nodes Expanded:
