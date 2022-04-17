@@ -9,20 +9,22 @@ maxnodes = 1
 
 def board_state (state):
     i = 0
-    temp = [([0] * 3) for j in range(3)]
-    for row in range(3):
-        for col in range(3):
+    temp = [([0] * 4) for j in range(4)]
+    for row in range(4):
+        for col in range(4):
             temp[row][col] = state[i]
             i+=1
     return temp
 
 def display_board(state):
     print("------------------------------------------------------------------------------")
-    print("| ", state[0], "| ", state[1], "| ", state[2], "| ", state[3], "| ", state[4])
+    print("| ", state[0], "| ", state[1], "| ", state[2], "| ", state[3])
     print("------------------------------------------------------------------------------")
-    print("| ", state[5], "| ", state[6], "| ", state[7], "| ", state[8], "| ", state[9])
+    print("| ", state[4], "| ", state[5], "| ", state[6], "| ", state[7])
     print("------------------------------------------------------------------------------")
-    print("| ", state[10], "| ", state[11], "| ", state[12], "| ", state[13], "| ", state[14])
+    print("| ", state[8], "| ", state[9], "| ", state[10], "| ", state[11])
+    print("------------------------------------------------------------------------------")
+    print("| ", state[12], "| ", state[13], "| ", state[14], "| ", state[15])
     print("------------------------------------------------------------------------------")
 
 def move_up(state):
@@ -30,10 +32,10 @@ def move_up(state):
     new_state = state[:]
     index = new_state.index('0')
 
-    if index not in [0,1,2,3,4]:
+    if index not in [0,1,2,3]:
         #Swap values
-        temp = new_state[index - 5]
-        new_state[index - 5] = new_state[index]
+        temp = new_state[index - 4]
+        new_state[index - 4] = new_state[index]
         new_state[index] = temp
         return new_state
     else:
@@ -45,10 +47,10 @@ def move_down(state):
     new_state = state[:]
     index = new_state.index('0')
 
-    if index not in [10,11,12,13,14]:
+    if index not in [12,13,14,15]:
         #Swap values
-        temp = new_state[index + 5]
-        new_state[index + 5] = new_state[index]
+        temp = new_state[index + 4]
+        new_state[index + 4] = new_state[index]
         new_state[index] = temp
         return new_state
     else:
@@ -60,7 +62,7 @@ def move_left(state):
     new_state = state[:]
     index = new_state.index('0')
 
-    if index not in [0,5,10]:
+    if index not in [0,4,8,12]:
         #Swap values
         temp = new_state[index - 1]
         new_state[index - 1] = new_state[index]
@@ -74,7 +76,7 @@ def move_right(state):
     new_state = state[:]
     index = new_state.index('0')
 
-    if index not in [4,9,14]:
+    if index not in [3,7,11,15]:
         #Swap values
         temp = new_state[index + 1]
         new_state[index + 1] = new_state[index]
