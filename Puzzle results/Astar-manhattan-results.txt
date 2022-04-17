@@ -18,143 +18,145 @@ Moves: lurulldrulddruruldlurdruldrd
 
 Start: 840156372
 Goal: 123456780
-Nodes Expanded:
+Nodes Expanded: 2371
+Moves: dllurdldrulurdrdlurulddr
 
 
 Start: 530478126
 Goal: 123456780
-Nodes Expanded:
-
+Nodes Expanded: 6946
+Moves: dldruulddrulldrruulldrurdd
 
 Start:068314257
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:453207186
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:128307645
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:035684712
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:684317025
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:028514637
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:618273540
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:042385671
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:420385716
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:054672813
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:314572680
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:637218045
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:430621875
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:158274036
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:130458726
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Start:
 Goal: 123456780
 Nodes Expanded:
-
+Moves:
 
 Easy:
 
 Start:16235A749C08DEBF
 Goal: 123456789ABCDEF0
 Nodes Expanded:
-
+Moves:
 
 Start:0634217859ABDEFC
 Goal: 123456789ABCDEF0
 Nodes Expanded:
-
+Moves:
 
 Start:012456379BC8DAEF
 Goal: 123456789ABCDEF0
 Nodes Expanded:
-
+Moves:
 
 Start:51246A38097BDEFC
 Goal: 123456789ABCDEF0
 Nodes Expanded:
-
+Moves:
 
 Start:12345678D9CFEBA0
 Goal: 123456789ABCDEF0
 Nodes Expanded:
-
+Moves:
 
 Hard:
 
 Start:71A92CE03DB4658F
 Goal: 123456789ABCDEF0
 Nodes Expanded:
-
+Moves:
 
 Start:02348697DF5A1EBC
 Goal: 123456789ABCDEF0
 Nodes Expanded:
-
+Moves:
 
 Start:39A1D0EC7BF86452
 Goal: 123456789ABCDEF0
 Nodes Expanded:
-
+Moves:
 
 Start:EAB480FC19D56237
 Goal: 123456789ABCDEF0
 Nodes Expanded:
-
+Moves:
 
 Start:7DB13C52F46E80A9
 Goal: 123456789ABCDEF0
 Nodes Expanded:
+Moves:

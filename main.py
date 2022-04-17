@@ -229,6 +229,7 @@ def a_star_mh (start, goal):
                 print("done")
                 print("The number of nodes visited", count)
                 print("States of moves are as follows:")
+                tofile(start, goal, count, item.pathFromStart())
                 return item.pathFromStart()            
             if not state in explored:
                 #change this function from f1 to f2 or vice versa to use different heuristics
@@ -346,25 +347,36 @@ class Node:
     def __lt__(self, other):
         return (self.h_cost < other.h_cost)
 
+def tofile(start, goal, nodes, moves ):
+    file1 = open("Astar-manhattan-results-8puzzle.txt", "a")
+    file1.write("Start: " + ''.join(start) + "\n")
+    file1.write("Goal: " + ''.join(goal) + "\n")
+    file1.write("Nodes expanded: " + str(nodes) + "\n")
+    file1.write("Moves: " + ''.join(moves) + "\n")
+    file1.write("\n")
+    file1.close()
+
 def main():
     #567408321
-    print("Enter the start and goal state(respectively)")
-    s_state = input()
-    g_state = input()
-    start_state = list(s_state)
-    goal_state = list(g_state)  
-    start = time.process_time()
-    result = a_star_mh(start_state, goal_state)
-    stop = time.process_time()
-    totaltime = stop - start
-    if result == None:
-        print ("No solution found")
-    elif result == [None]:
-        print ("Start node was the goal")
-    else:
-        print (result)
-        print (len(result), " moves")
-    print("Total searching time: %.5f seconds" % (totaltime))
+    #print("Enter the start and goal state(respectively)")
+    f = open("tests.txt", "r")
+    for state in f:
+        s_state = state.strip()
+        g_state = "123456780"
+        start_state = list(s_state)
+        goal_state = list(g_state)  
+        start = time.process_time()
+        result = a_star_mh(start_state, goal_state)
+        stop = time.process_time()
+        totaltime = stop - start
+        if result == None:
+            print ("No solution found")
+        elif result == [None]:
+            print ("Start node was the goal")
+        else:
+            print (result)
+            print (len(result), " moves")
+        print("Total searching time: %.5f seconds" % (totaltime))
 
 if __name__ == "__main__":
     main()
