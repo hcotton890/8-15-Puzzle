@@ -210,6 +210,37 @@ def a_star (start, goal):
                     nodes.append(item)
 
 
+def a_star_mh (start, goal):
+    nodes = []
+    s_node = create_node(start, None, None, 0, 0)
+    #change this funciton from f1 to f2 or vice versa to use different heuristics
+    f1(s_node, goal)
+    nodes.append(s_node)
+    explored = []
+    count = 0
+    while nodes:
+        nodes.sort()
+        node = nodes.pop(0)
+        explored.append(node.getState())
+        count += 1
+
+        print("Trying state", node.state, " and move: ", node.operator)
+        if node.state == goal:
+            print("done")
+            print("The number of nodes visited", count)
+            print("States of moves are as follows:")
+            return node.pathFromStart()
+        else:
+            expanded_nodes = expand_node(node)
+            for item in expanded_nodes:
+                state = item.getState()
+                if state not in explored:
+                    #change this function from f1 to f2 or vice versa to use different heuristics
+                    f1(item, goal)
+                    nodes.append(item)
+
+
+
 def dfs_contour(node, goal, f_limit):
     global maxnodes
     f1(node, goal)
@@ -259,16 +290,41 @@ def ofp (state, goal):
             cost += 1
     return cost
 
-def mh (state):
-    #must change when testing other final position
-    finalposition = [(1, 1), (0, 0), (1, 0), (2, 0), (2, 1), (2, 2), (1, 2), (0, 2),(0, 1)]
+def mh (state, goal):
     cost = 0
-    temp = board_state(state)
-    for y in range(3):
-        for x in range(5):
-            t = temp[y][x]
-            xf, yf = finalposition[t]
-            cost += abs(xf - x) + abs (yf-y)
+    for i in range(len(state)):
+        if state[i] == 'A':
+            state[i] = 10
+        elif state[i] == 'B':
+            state[i] == 11
+        elif state[i] == 'C':
+            state[i] == 12
+        elif state[i] == 'D':
+            state[i] == 13
+        elif state[i] == 'E':
+            state[i] == 14
+        elif state[i] == 'F':
+            state[i] == 15
+        else:
+            state[i] = int(state[i])
+    for i in range(len(goal)):
+        if goal[i] == 'A':
+            goal[i] = 10
+        elif goal[i] == 'B':
+            goal[i] == 11
+        elif goal[i] == 'C':
+            goal[i] == 12
+        elif goal[i] == 'D':
+            goal[i] == 13
+        elif goal[i] == 'E':
+            goal[i] == 14
+        elif goal[i] == 'F':
+            goal[i] == 15
+        else:
+            goal[i] = int(goal[i])
+    #must change when testing other final position
+    for b, g in ((state.index(i), goal.index(i)) for i in range (1,16)):
+        cost = sum(abs(b%3 - g%3) + abs (b//3 - g //3))
     return cost
 
 def f1(node, goal):
@@ -329,7 +385,7 @@ def main():
     start_state = list(s_state)
     goal_state = list(g_state)    
     start = time.process_time()
-    result = bfs(start_state, goal_state)
+    result = a_star_mh(start_state, goal_state)
     totaltime = start
     if result == None:
         print ("No solution found")
