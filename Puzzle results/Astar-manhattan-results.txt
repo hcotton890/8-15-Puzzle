@@ -2,17 +2,18 @@ A-star manhattan:
 
 Start: 160273485
 Goal: 123456780
-Nodes Expanded:
-
+Nodes Expanded: 1403
+Moves: ddluldruurdldruuldrd
 
 Start: 462301587
 Goal: 123456780
-Nodes Expanded:
-
+Nodes Expanded: 8559
+Moves: rdlurulldrdluruldrrulddr
 
 Start: 821574360
 Goal: 123456780
-Nodes Expanded:
+Nodes Expanded: 20682
+Moves: lurulldrulddruruldlurdruldrd
 
 
 Start: 840156372

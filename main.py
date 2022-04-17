@@ -101,46 +101,48 @@ def bfs (start, goal):
     nodes = []
     nodes.append(create_node(start, None, None, 0, 0))
     count = 0
-    explored = []
+    explored = {''.join(nodes[0].getState()):True}
     while nodes:
         node = nodes.pop(0)
         count += 1
         print ("Trying state", node.state, " and move: ", node.operator)
-        explored.append(node.getState())
-        if node.state == goal:
-            print ("done")
-            print ("The number of nodes visited ", count)
-            print ("States of moves are as follows:")
-            return node.pathFromStart()
-        else:
-            expanded_nodes = expand_node(node)
-            for item in expanded_nodes:
-                state = item.getState()
-                if state not in explored:
-                    nodes.append(item)
+        if count > 2000000:
+            break
+        expanded_nodes = expand_node(node)
+        for item in expanded_nodes:
+            state = ''.join(item.getState())
+            if item.state == goal:
+                print ("done")
+                print ("The number of nodes visited ", count)
+                print ("States of moves are as follows:")
+                return item.pathFromStart()
+            if not state in explored:
+                explored[state] = True
+                nodes.append(item)
+            
 #depth first search
 def dfs (start, goal):
     nodes = []
-    #Create queue with root node in it
     nodes.append(create_node(start, None, None, 0, 0))
     count = 0
-    explored = []
+    explored = {''.join(nodes[0].getState()):True}
     while nodes:
         node = nodes.pop(0)
         count += 1
-        print("Trying state", node.state, " and move: ", node.operator)
-        explored.append(node.getState())
-        if node.state == goal:
-            print ("done")
-            print ("The number of nodes visited", count)
-            print ("States of moves are as follows: ")
-            return node.pathFromStart()
-        else:
-            expanded_nodes = expand_node(node)
-            for item in expanded_nodes:
-                state = item.getState()
-                if state not in explored:
-                    nodes.insert(0, item)
+        print ("Trying state", node.state, " and move: ", node.operator)
+        if count > 2000000:
+            break
+        expanded_nodes = expand_node(node)
+        for item in expanded_nodes:
+            state = ''.join(item.getState())
+            if item.state == goal:
+                print ("done")
+                print ("The number of nodes visited ", count)
+                print ("States of moves are as follows:")
+                return item.pathFromStart()
+            if not state in explored:
+                explored[state] = True
+                nodes.insert(0,item)
 
 #depth limit search
 def dls (start, goal, depth = 20):
@@ -153,22 +155,22 @@ def dls (start, goal, depth = 20):
     #Create queue with root node
     nodes.append(create_node (start, None, None, 0, 0))
     count = 0
-    explored = []
+    explored = {''.join(nodes[0].getState()):True}
     while nodes:
         node = nodes.pop(0)
         count += 1
-        explored.append(node.getState())
         print("Trying state", node.state, " and move: ", node.operator)
-        if node.state == goal:
-            print("done")
-            print("The number of nodes visisted ", count)
-            print("States of moves are as follows:")
-            return node.pathFromStart()
         if node.depth < depth_limit:
             expanded_nodes = expand_node(node)
             for item in expanded_nodes:
-                state = item.getState()
-                if state not in explored:
+                state = ''.join(item.getState())
+                if item.state == goal:
+                    print("done")
+                    print("The number of nodes visisted ", count)
+                    print("States of moves are as follows:")
+                    return item.pathFromStart()
+                if not state in explored:
+                    explored[state] = True
                     nodes.insert(0,item)
 
 #iterative depth first search
@@ -182,30 +184,57 @@ def a_star (start, goal):
     nodes = []
     s_node = create_node(start, None, None, 0, 0)
     #change this funciton from f1 to f2 or vice versa to use different heuristics
-    f2(s_node)
+    f1(s_node, goal)
     nodes.append(s_node)
-    explored = []
+    explored = {''.join(nodes[0].getState()):True}
     count = 0
     while nodes:
         nodes.sort()
         node = nodes.pop(0)
-        explored.append(node.getState())
         count += 1
-
         print("Trying state", node.state, " and move: ", node.operator)
-        if node.state == goal:
-            print("done")
-            print("The number of nodes visited", count)
-            print("States of moves are as follows:")
-            return node.pathFromStart()
-        else:
-            expanded_nodes = expand_node(node)
-            for item in expanded_nodes:
-                state = item.getState()
-                if state not in explored:
-                    #change this function from f1 to f2 or vice versa to use different heuristics
-                    f2(item)
-                    nodes.append(item)
+        expanded_nodes = expand_node(node)
+        for item in expanded_nodes:
+            state = ''.join(item.getState())
+            if item.state == goal:
+                print("done")
+                print("The number of nodes visited", count)
+                print("States of moves are as follows:")
+                return item.pathFromStart()            
+            if not state in explored:
+                #change this function from f1 to f2 or vice versa to use different heuristics
+                explored[state] = True
+                f1(item, goal)
+                nodes.append(item)
+
+
+def a_star_mh (start, goal):
+    nodes = []
+    s_node = create_node(start, None, None, 0, 0)
+    #change this funciton from f1 to f2 or vice versa to use different heuristics
+    f2(s_node, goal)
+    nodes.append(s_node)
+    print(goal)
+    explored = {''.join(nodes[0].getState()):True}
+    count = 0
+    while nodes:
+        nodes.sort()
+        node = nodes.pop(0)
+        count += 1
+        print("Trying state", node.state, " and move: ", node.operator)
+        expanded_nodes = expand_node(node)
+        for item in expanded_nodes:
+            state = ''.join(item.getState())
+            if item.state == goal:
+                print("done")
+                print("The number of nodes visited", count)
+                print("States of moves are as follows:")
+                return item.pathFromStart()            
+            if not state in explored:
+                #change this function from f1 to f2 or vice versa to use different heuristics
+                explored[state] = True
+                f2(item, goal)
+                nodes.append(item)
 
 
 def dfs_contour(node, goal, f_limit):
@@ -257,23 +286,21 @@ def ofp (state, goal):
             cost += 1
     return cost
 
-def mh (state):
-    #must change when testing other final position
-    finalposition = [(1, 1), (0, 0), (1, 0), (2, 0), (2, 1), (2, 2), (1, 2), (0, 2),(0, 1)]
+def mh (state, goal):
+    s_state = list(state)
+    g_state = list(goal)
     cost = 0
-    temp = board_state(state)
-    for y in range(3):
-        for x in range(3):
-            t = temp[y][x]
-            xf, yf = finalposition[t]
-            cost += abs(xf - x) + abs (yf-y)
+    for i in range(len(s_state)):
+        s_state[i] = int(s_state[i])
+        g_state[i] = int(g_state[i])
+    cost = sum(abs(val1%4 - val2%4) + abs(val1//4 - val2//4) for val1, val2 in zip(s_state, g_state))
     return cost
 
 def f1(node, goal):
     node.h_cost = node.depth + ofp(node.state, goal)
 
-def f2(node):
-    node.h_cost = node.depth + mh(node.state)
+def f2(node, goal):
+    node.h_cost = node.depth + mh(node.state, goal)
 
 
 
@@ -327,8 +354,9 @@ def main():
     start_state = list(s_state)
     goal_state = list(g_state)  
     start = time.process_time()
-    result = bfs(start_state, goal_state)
-    totaltime = start
+    result = a_star_mh(start_state, goal_state)
+    stop = time.process_time()
+    totaltime = stop - start
     if result == None:
         print ("No solution found")
     elif result == [None]:
