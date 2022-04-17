@@ -115,6 +115,7 @@ def bfs (start, goal):
                 print ("done")
                 print ("The number of nodes visited ", count)
                 print ("States of moves are as follows:")
+                #tofile(start, goal, count, item.pathFromStart())
                 return item.pathFromStart()
             if not state in explored:
                 explored[state] = True
@@ -168,6 +169,7 @@ def dls (start, goal, depth = 20):
                     print("done")
                     print("The number of nodes visisted ", count)
                     print("States of moves are as follows:")
+                    #tofile(start, goal, count, item.pathFromStart())
                     return item.pathFromStart()
                 if not state in explored:
                     explored[state] = True
@@ -200,6 +202,7 @@ def a_star (start, goal):
                 print("done")
                 print("The number of nodes visited", count)
                 print("States of moves are as follows:")
+                tofile(start, goal, count, item.pathFromStart())
                 return item.pathFromStart()            
             if not state in explored:
                 #change this function from f1 to f2 or vice versa to use different heuristics
@@ -229,7 +232,7 @@ def a_star_mh (start, goal):
                 print("done")
                 print("The number of nodes visited", count)
                 print("States of moves are as follows:")
-                tofile(start, goal, count, item.pathFromStart())
+                #tofile(start, goal, count, item.pathFromStart())
                 return item.pathFromStart()            
             if not state in explored:
                 #change this function from f1 to f2 or vice versa to use different heuristics
@@ -275,6 +278,7 @@ def ida_star(start, goal):
             print("done")
             print("Max nodes ", tmp_node.depth, " loops ", loops)
             print("States of moves are as follows:")
+            #tofile(start, goal, tmp_node.depth, tmp_node.pathFromStart())
             return tmp_node.pathFromStart()
         
 
@@ -348,7 +352,7 @@ class Node:
         return (self.h_cost < other.h_cost)
 
 def tofile(start, goal, nodes, moves ):
-    file1 = open("Astar-manhattan-results-8puzzle.txt", "a")
+    file1 = open("astar-outofplace-results-8puzzle.txt", "a")
     file1.write("Start: " + ''.join(start) + "\n")
     file1.write("Goal: " + ''.join(goal) + "\n")
     file1.write("Nodes expanded: " + str(nodes) + "\n")
@@ -366,7 +370,7 @@ def main():
         start_state = list(s_state)
         goal_state = list(g_state)  
         start = time.process_time()
-        result = a_star_mh(start_state, goal_state)
+        result = a_star(start_state, goal_state)
         stop = time.process_time()
         totaltime = stop - start
         if result == None:
@@ -377,6 +381,6 @@ def main():
             print (result)
             print (len(result), " moves")
         print("Total searching time: %.5f seconds" % (totaltime))
-
+    f.close()
 if __name__ == "__main__":
     main()
