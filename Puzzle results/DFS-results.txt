@@ -2,8 +2,8 @@ Depth-First Search:
 
 Start: 160273485
 Goal: 123456780
-Nodes Expanded:
-
+Nodes Expanded:30158
+ddlurulddlurrulddlurdruuldrd
 
 Start: 462301587
 Goal: 123456780
