@@ -395,10 +395,6 @@ def main():
         start = time.process_time()
         result = dfs(start_state, goal_state)
         stop = time.process_time()
-    elif search_algo == "dls":
-        start = time.process_time()
-        result = dls(start_state, goal_state)
-        stop = time.process_time()
     elif search_algo == "ids":
         start = time.process_time()
         result = ids(start_state, goal_state)
