@@ -233,6 +233,7 @@ def a_star_mh (start, goal):
                 print("done")
                 print("The number of nodes visited", count)
                 print("States of moves are as follows:")
+                tofile(start,goal,count,item.pathFromStart())
                 return item.pathFromStart()            
             if not state in explored:
                 #change this function from f1 to f2 or vice versa to use different heuristics
@@ -338,7 +339,8 @@ def f1(node, goal):
 def f2(node, goal):
     node.h_cost = node.depth + mh(node.state, goal)
 
-
+def cmp(x):
+    return x.h_cost
 
 class Node:
     def __init__(self, state, parent, operator, depth, cost):
@@ -384,7 +386,7 @@ class Node:
 
 
 def tofile(start, goal, nodes, moves ):
-    file1 = open("IDDFS-15Puzzle.txt", "a")
+    file1 = open("ASTAR_MH_15Puzzle.txt", "a")
     file1.write("Start: " + ''.join(start) + "\n")
     file1.write("Goal: " + ''.join(goal) + "\n")
     file1.write("Nodes expanded: " + str(nodes) + "\n")
@@ -396,14 +398,14 @@ def tofile(start, goal, nodes, moves ):
 def main():
     #567408321
     print("Enter the start and goal state(respectively)")
-    f = open("15test.txt", "r")
+    f = open("easy15test.txt", "r")
     for state in f:
         s_state = state.strip()
         g_state = "123456789ABCDEF0"
         start_state = list(s_state)
         goal_state = list(g_state)    
         start = time.process_time()
-        result = ids(start_state, goal_state)
+        result = a_star_mh(start_state, goal_state)
         stop = time.process_time()
         totaltime = stop - start
         if result == None:
@@ -414,6 +416,6 @@ def main():
             print (result)
             print (len(result), " moves")
         print("Total searching time: ", totaltime, " seconds")
-
+    f.close()
 if __name__ == "__main__":
     main()
