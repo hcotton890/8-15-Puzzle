@@ -350,6 +350,8 @@ class Node:
             currNode = currNode.parent
         movesList.reverse()
         stateList.reverse()
+        for state in stateList:
+            display_board(state)
         return movesList
 
     def __lt__(self, other):
