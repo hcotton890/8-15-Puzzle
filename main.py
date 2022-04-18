@@ -366,7 +366,7 @@ def main():
     print("Enter the start state: ")
     s_state = input()
     start_state = list(s_state)
-    goal_state = [1, 2, 3, 4, 5, 6, 7, 8, 0]
+    goal_state = "0123456780"
     # f = open("tests.txt", "r")
     # for state in f:
     if search_algo == "bfs":
