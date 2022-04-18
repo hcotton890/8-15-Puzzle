@@ -361,7 +361,7 @@ def tofile(start, goal, nodes, moves ):
 
 def main():
     #567408321
-print("Enter Search Algorithm: \n bfs \n dfs \n dls \n ids \n a_star \n ida_star \n")
+    print("Enter Search Algorithm: \n bfs \n dfs \n dls \n ids \n a_star \n ida_star \n")
     search_algo = input()
     print("Enter the start state: ")
     s_state = input()
