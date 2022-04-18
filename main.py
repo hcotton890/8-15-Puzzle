@@ -361,25 +361,47 @@ def tofile(start, goal, nodes, moves ):
 
 def main():
     #567408321
-    #print("Enter the start and goal state(respectively)")
-    f = open("tests.txt", "r")
-    for state in f:
-        s_state = state.strip()
-        g_state = "123456780"
-        start_state = list(s_state)
-        goal_state = list(g_state)  
+print("Enter Search Algorithm: \n bfs \n dfs \n dls \n ids \n a_star \n ida_star \n")
+    search_algo = input()
+    print("Enter the start state: ")
+    s_state = input()
+    start_state = list(s_state)
+    goal_state = [1, 2, 3, 4, 5, 6, 7, 8, 0]
+    # f = open("tests.txt", "r")
+    # for state in f:
+    if search_algo == "bfs":
+        start = time.process_time()
+        result = bfs(start_state, goal_state)
+        stop = time.process_time()
+    elif search_algo == "dfs":
         start = time.process_time()
         result = dfs(start_state, goal_state)
         stop = time.process_time()
-        totaltime = stop - start
-        if result == None:
-            print ("No solution found")
-        elif result == [None]:
-            print ("Start node was the goal")
-        else:
-            print (result)
-            print (len(result), " moves")
-        print("Total searching time: %.5f seconds" % (totaltime))
-    f.close()
+    elif search_algo == "dls":
+        start = time.process_time()
+        result = dls(start_state, goal_state)
+        stop = time.process_time()
+    elif search_algo == "ids":
+        start = time.process_time()
+        result = ids(start_state, goal_state)
+        stop = time.process_time()
+    elif search_algo == "a_star":
+        start = time.process_time()
+        result = a_star(start_state, goal_state)
+        stop = time.process_time()
+    elif search_algo == "ida_star":
+        start = time.process_time()
+        result = ida_star(start_state, goal_state)
+        stop = time.process_time()
+    totaltime = stop - start
+    if result == None:
+        print("No solution found")
+    elif result == [None]:
+        print("Start node was the goal")
+    else:
+        print(result)
+        print(len(result), " moves")
+    print("Total searching time: %.5f seconds" % (totaltime))
+    # f.close()
 if __name__ == "__main__":
     main()
