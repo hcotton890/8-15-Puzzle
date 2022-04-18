@@ -171,7 +171,7 @@ def dls (start, goal, depth = 20):
                     print("done")
                     print("The number of nodes visisted ", count)
                     print("States of moves are as follows:")
-                    tofile(start, goal, count, item.pathFromStart())
+                    #tofile(start, goal, count, item.pathFromStart())
                     return item.pathFromStart()
                 if not state in explored:
                     explored[state] = True
@@ -255,7 +255,7 @@ def dfs_contour(start, node, goal, f_limit):
         count += 1
         print("Trying state", node.state, " and move: ", node.operator)
         if node.state == goal:
-            #tofile(start, goal, count, node.pathFromStart())
+            tofile(start, goal, count, node.pathFromStart())
             return node.pathFromStart()
         if node.key > f_limit:
             costs.add(node.key)
@@ -275,7 +275,7 @@ def dfs_contour(start, node, goal, f_limit):
 def ida_star(start, goal):
     #Iterative deepening a* search with heuristics
     global costs
-    threshold = ofp(start, goal)
+    threshold = mh(start, goal)
     while True:
         response = dfs_contour(start, start, goal, threshold)
         if type(response) is list:
@@ -386,7 +386,7 @@ class Node:
 
 
 def tofile(start, goal, nodes, moves ):
-    file1 = open("ASTAR_MH_15Puzzle.txt", "a")
+    file1 = open("IDASTAR_MH_15Puzzle.txt", "a")
     file1.write("Start: " + ''.join(start) + "\n")
     file1.write("Goal: " + ''.join(goal) + "\n")
     file1.write("Nodes expanded: " + str(nodes) + "\n")
@@ -405,7 +405,7 @@ def main():
         start_state = list(s_state)
         goal_state = list(g_state)    
         start = time.process_time()
-        result = a_star_mh(start_state, goal_state)
+        result = ida_star(start_state, goal_state)
         stop = time.process_time()
         totaltime = stop - start
         if result == None:
