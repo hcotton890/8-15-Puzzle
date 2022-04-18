@@ -1,4 +1,4 @@
-Iterative Deepening with DFS:
+Depth-First Search:
 
 Easy:
 
@@ -14,6 +14,7 @@ Start:012456379BC8DAEF
 Goal: 123456789ABCDEF0
 Failed
 
+
 Start:51246A38097BDEFC
 Goal: 123456789ABCDEF0
 Failed
@@ -22,7 +23,7 @@ Start:12345678D9CFEBA0
 Goal: 123456789ABCDEF0
 Failed
 
-Hard:
+Difficult:
 
 Start:71A92CE03DB4658F
 Goal: 123456789ABCDEF0
