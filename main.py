@@ -6,6 +6,8 @@ import time
 
 INFINITY = 50000
 maxnodes = 1
+max_search_depth = 0
+costs = set()
 
 def board_state (state):
     i = 0
@@ -242,45 +244,46 @@ def a_star_mh (start, goal):
                 nodes.append(item)
 
 
-def dfs_contour(node, goal, f_limit):
-    global maxnodes
-    f1(node, goal)
-    if node.h_cost > f_limit:
-        return node, node.h_cost
-    if node.state == goal:
-        return node, node.h_cost
-    minimum = INFINITY
-
-    expanded_nodes = expand_node(node)
-    maxnodes += 1
-    for item in expanded_nodes:
-        f1(item, goal)
-        print ("Trying state", item.state, " and move: ", item.operator)
-        newnode, newlimit = dfs_contour(item, goal, f_limit)
-        if newnode.state == goal:
-            return newnode, newnode.h_cost
-        if newlimit < minimum:
-            minimum = newlimit
-    return node, minimum
-
+def dfs_contour(start, node, goal, f_limit):
+    global max_search_depth
+    nodes = []
+    nodes.append(create_node(node, None, None, 0, 0))
+    nodes[0].key = f_limit
+    explored = {''.join(nodes[0].getState()):True}
+    count = 0
+    while nodes:
+        node = nodes.pop(0)
+        count += 1
+        print("Trying state", node.state, " and move: ", node.operator)
+        if node.state == goal:
+            tofile(start, goal, count, node.pathFromStart())
+            return node.pathFromStart()
+        if node.key > f_limit:
+            costs.add(node.key)
+        if node.depth < f_limit:
+            neighbors = expand_node(node)
+            for neighbor in neighbors:
+                state = ''.join(neighbor.getState())
+                if not state in explored:
+                    neighbor.key = neighbor.cost + mh(neighbor.state, goal)
+                    nodes.append(neighbor)
+                    explored[state] = True
+                    if neighbor.depth > max_search_depth:
+                        max_search_depth +=1
+    return min(costs)
+                
 
 def ida_star(start, goal):
     #Iterative deepening a* search with heuristics
-    nodes = []
-    nodes.append(create_node(start, None, None, 0, 0))
-    node = nodes.pop(0)
-    f_limit = ofp(node.state, goal)
-    loops = 0
-    while f_limit < INFINITY:
-        loops += 1
-        tmp_node, tmp_limit = dfs_contour(node, goal, f_limit)
-        f_limit = tmp_limit + 1
-        if tmp_node.state == goal:
-            print("done")
-            print("Max nodes ", tmp_node.depth, " loops ", loops)
-            print("States of moves are as follows:")
-            #tofile(start, goal, tmp_node.depth, tmp_node.pathFromStart())
-            return tmp_node.pathFromStart()
+    global costs
+    threshold = ofp(start, goal)
+    while True:
+        response = dfs_contour(start, start, goal, threshold)
+        if type(response) is list:
+            return response
+        
+        threshold = response
+        costs = set()
         
 
 
@@ -326,6 +329,8 @@ class Node:
         self.f_cost = 0
         #heuristic cost
         self.h_cost = 0
+        #key
+        self.key = 0
     
     def getState(self):
         return self.state
@@ -351,7 +356,7 @@ class Node:
         return (self.h_cost < other.h_cost)
 
 def tofile(start, goal, nodes, moves ):
-    file1 = open("DFS-8puzzle.txt", "a")
+    file1 = open("IDastar_outofplace.txt", "a")
     file1.write("Start: " + ''.join(start) + "\n")
     file1.write("Goal: " + ''.join(goal) + "\n")
     file1.write("Nodes expanded: " + str(nodes) + "\n")
@@ -363,13 +368,14 @@ def main():
     #567408321
     #print("Enter the start and goal state(respectively)")
     f = open("tests.txt", "r")
+    
     for state in f:
         s_state = state.strip()
         g_state = "123456780"
         start_state = list(s_state)
         goal_state = list(g_state)  
         start = time.process_time()
-        result = dfs(start_state, goal_state)
+        result = ida_star(start_state, goal_state)
         stop = time.process_time()
         totaltime = stop - start
         if result == None:
