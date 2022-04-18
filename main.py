@@ -256,7 +256,7 @@ def dfs_contour(start, node, goal, f_limit):
         count += 1
         print("Trying state", node.state, " and move: ", node.operator)
         if node.state == goal:
-            tofile(start, goal, count, node.pathFromStart())
+            #tofile(start, goal, count, node.pathFromStart())
             return node.pathFromStart()
         if node.key > f_limit:
             costs.add(node.key)
