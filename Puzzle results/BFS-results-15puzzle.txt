@@ -1,0 +1,53 @@
+Breadth-First Search:
+
+Easy:
+
+Start:16235A749C08DEBF
+Goal: 123456789ABCDEF0
+Nodes Expanded:2305
+luurrddldr
+
+Start:0634217859ABDEFC
+Goal: 123456789ABCDEF0
+Nodes Expanded:1060
+drulddrrrd
+
+Start:012456379BC8DAEF
+Goal: 123456789ABCDEF0
+Nodes Expanded:1752
+rrdrdlldrr
+
+Start:51246A38097BDEFC
+Goal: 123456789ABCDEF0
+Nodes Expanded:1821
+rulurrddrd
+
+Start:12345678D9CFEBA0
+Goal: 123456789ABCDEF0
+Nodes Expanded:1201
+uldllurrdr
+
+Difficult:
+
+Start:71A92CE03DB4658F
+Goal: 123456789ABCDEF0
+Failed
+
+
+Start:02348697DF5A1EBC
+Goal: 123456789ABCDEF0
+Failed
+
+
+Start:39A1D0EC7BF86452
+Goal: 123456789ABCDEF0
+Failed
+
+Start:EAB480FC19D56237
+Goal: 123456789ABCDEF0
+Failed
+
+
+Start:7DB13C52F46E80A9
+Goal: 123456789ABCDEF0
+Failed
