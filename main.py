@@ -361,7 +361,7 @@ def tofile(start, goal, nodes, moves ):
 
 def main():
     #567408321
-    print("Enter Search Algorithm: \n bfs \n dfs \n dls \n ids \n a_star \n ida_star \n")
+    print("Enter Search Algorithm: \n bfs \n dfs \n ids \n a_star \n ida_star \n")
     search_algo = input()
     print("Enter the start state: ")
     s_state = input()
@@ -376,10 +376,6 @@ def main():
     elif search_algo == "dfs":
         start = time.process_time()
         result = dfs(start_state, goal_state)
-        stop = time.process_time()
-    elif search_algo == "dls":
-        start = time.process_time()
-        result = dls(start_state, goal_state)
         stop = time.process_time()
     elif search_algo == "ids":
         start = time.process_time()
