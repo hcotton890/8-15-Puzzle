@@ -403,7 +403,7 @@ def main():
         start_state = list(s_state)
         goal_state = list(g_state)    
         start = time.process_time()
-        result = a_star_mh(start_state, goal_state)
+        result = ids(start_state, goal_state)
         stop = time.process_time()
         totaltime = stop - start
         if result == None:
