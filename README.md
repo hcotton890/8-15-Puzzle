@@ -22,3 +22,15 @@ Running code: python search15.py {algorithm as string} {start_state as string}
 algorithm = bfs, dfs, ids, a_star, or ida_star
 
 example - python search15.py bfs 1234568789ABCEDF0
+
+applymoves.py is the file for applying movement manually
+Running code: python applymoves.py {Current State of graph} {moves to apply}
+moves possible = l r u d
+
+example - applymoves.py 012345678 lrdlru
+
+applymoves15.py is the file for applying movement manually
+Running code: python applymoves.py {Current State of graph} {moves to apply}
+moves possible = l r u d
+
+example - applymoves.py 0123456789ABCDEF lrdlru
