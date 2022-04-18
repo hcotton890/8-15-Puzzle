@@ -140,6 +140,7 @@ def dfs (start, goal):
                 print ("done")
                 print ("The number of nodes visited ", count)
                 print ("States of moves are as follows:")
+                tofile(start, goal, count, item.pathFromStart())
                 return item.pathFromStart()
             if not state in explored:
                 explored[state] = True
@@ -202,7 +203,7 @@ def a_star (start, goal):
                 print("done")
                 print("The number of nodes visited", count)
                 print("States of moves are as follows:")
-                tofile(start, goal, count, item.pathFromStart())
+                #tofile(start, goal, count, item.pathFromStart())
                 return item.pathFromStart()            
             if not state in explored:
                 #change this function from f1 to f2 or vice versa to use different heuristics
@@ -344,15 +345,13 @@ class Node:
             currNode = currNode.parent
         movesList.reverse()
         stateList.reverse()
-        for state in stateList:
-            display_board(state)
         return movesList
 
     def __lt__(self, other):
         return (self.h_cost < other.h_cost)
 
 def tofile(start, goal, nodes, moves ):
-    file1 = open("astar-outofplace-results-8puzzle.txt", "a")
+    file1 = open("DFS-8puzzle.txt", "a")
     file1.write("Start: " + ''.join(start) + "\n")
     file1.write("Goal: " + ''.join(goal) + "\n")
     file1.write("Nodes expanded: " + str(nodes) + "\n")
@@ -370,7 +369,7 @@ def main():
         start_state = list(s_state)
         goal_state = list(g_state)  
         start = time.process_time()
-        result = a_star(start_state, goal_state)
+        result = dfs(start_state, goal_state)
         stop = time.process_time()
         totaltime = stop - start
         if result == None:
